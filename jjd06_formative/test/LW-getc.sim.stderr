@@ -1,0 +1,15 @@
+Number of instructions: 8
+Initial memory:
+Instructions:
+0	1006776320
+1	2353135616
+2	65011720
+4	1006776320
+5	2353135616
+6	65011720
+Data:
+
+
+CPU starts running.
+instruction: 1006776320
+error: i instruction not implemented

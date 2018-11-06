@@ -1,0 +1,21 @@
+Number of instructions: 4
+Initial memory:
+Instructions:
+0	65011720
+Data:
+
+
+CPU starts running.
+instruction: 65011720
+0           0           0           0           0           0           0           0           
+0           0           0           0           0           0           0           0           
+0           0           0           0           0           0           0           0           
+0           0           0           0           0           0           0           0           
+pc: 4
+instruction: 0
+0           0           0           0           0           0           0           0           
+0           0           0           0           0           0           0           0           
+0           0           0           0           0           0           0           0           
+0           0           0           0           0           0           0           0           
+pc: 4026531840
+finshed execution!

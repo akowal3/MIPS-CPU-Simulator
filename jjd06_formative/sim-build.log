@@ -1,0 +1,9 @@
+make[1]: Entering directory '/media/sf_shared/cw/formative/working/respectingPolice'
+mkdir -p bin
+g++ -std=c++11  src/registers.cpp -c -o bin/registers.o
+g++ -std=c++11  src/instruction.cpp -c -o bin/instruction.o
+g++ -std=c++11 src/memory.cpp -c -o bin/memory.o
+g++ -std=c++11 src/cpu.cpp -c -o bin/cpu.o
+g++ -std=c++11 src/simulator.cpp -c -o bin/simulator.o
+g++ -std=c++11 bin/registers.o bin/instruction.o bin/memory.o bin/cpu.o bin/simulator.o -o bin/mips_simulator
+make[1]: Leaving directory '/media/sf_shared/cw/formative/working/respectingPolice'
