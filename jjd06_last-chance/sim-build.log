@@ -1,0 +1,70 @@
+make[1]: Entering directory '/media/sf_shared/cw/last-chance/working/respectingPolice'
+mkdir -p bin
+g++ -W -Wall -std=c++11  src/registers.cpp -c -o bin/registers.o
+g++ -W -Wall -std=c++11  src/instruction.cpp -c -o bin/instruction.o
+g++ -W -Wall -std=c++11 src/memory.cpp -c -o bin/memory.o
+src/memory.cpp: In member function ‘void memory::write_w(word, word)’:
+src/memory.cpp:56:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(index >= data->size())
+              ^
+src/memory.cpp: In member function ‘void memory::write_h(word, word)’:
+src/memory.cpp:72:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(index >= data->size())
+              ^
+src/memory.cpp: In member function ‘void memory::write_b(word, word)’:
+src/memory.cpp:97:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(index >= data->size()){
+              ^
+src/memory.cpp: In member function ‘word memory::read_w(word)’:
+src/memory.cpp:125:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(index >= data->size()) return 0;
+              ^
+src/memory.cpp:135:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     return (in_w == EOF) ? -1 : in_w & 0x000000FF;
+                  ^
+src/memory.cpp: In member function ‘word memory::read_h(word)’:
+src/memory.cpp:145:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(index >= data->size()) return 0;
+              ^
+src/memory.cpp:156:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+       return (in_w == EOF) ? 0xFFFF : in_w & 0x00FF;
+                    ^
+src/memory.cpp:158:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     return (in_w == EOF) ? 0xFFFF : 0;
+                  ^
+src/memory.cpp: In member function ‘word memory::read_b(word)’:
+src/memory.cpp:175:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(index >= data->size()) return 0;
+              ^
+src/memory.cpp:186:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+       return (in_w == EOF) ? 0xFF : in_w & 0xFF;
+                    ^
+src/memory.cpp:188:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     return (in_w == EOF) ? 0xFF : 0;
+                  ^
+src/memory.cpp: In member function ‘void memory::print_mem() const’:
+src/memory.cpp:214:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i = 0; i < inst->size(); i++)
+                    ^
+src/memory.cpp:218:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i = 0; i < data->size(); i++)
+                    ^
+src/memory.cpp: In member function ‘word memory::read_h(word)’:
+src/memory.cpp:169:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/memory.cpp: In member function ‘word memory::read_b(word)’:
+src/memory.cpp:201:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -W -Wall -std=c++11 src/cpu.cpp -c -o bin/cpu.o
+src/cpu.cpp: In member function ‘void cpu::test_zero_fields_R(const instruction&)’:
+src/cpu.cpp:652:54: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+     case 0x11: if(inst.src_t != 0 || inst.destn != 0 && inst.shamt != 0) {std::cerr << "error: invalid instruction" << '\n'; std::exit(-12);} break; //rt,rd,shamt
+                                                      ^
+src/cpu.cpp:654:54: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+     case 0x13: if(inst.src_t != 0 || inst.destn != 0 && inst.shamt != 0) {std::cerr << "error: invalid instruction" << '\n'; std::exit(-12);} break; //rt,rd,shamt
+                                                      ^
+g++ -W -Wall -std=c++11 src/simulator.cpp -c -o bin/simulator.o
+g++ -W -Wall -std=c++11 bin/registers.o bin/instruction.o bin/memory.o bin/cpu.o bin/simulator.o -o bin/mips_simulator
+make[1]: Leaving directory '/media/sf_shared/cw/last-chance/working/respectingPolice'
