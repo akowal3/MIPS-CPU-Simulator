@@ -1,0 +1,50 @@
+make[1]: Entering directory '/media/sf_shared/cw/summative/working/respectingPolice'
+g++ -W -Wall -std=c++11 -c src/MIPS_Parser_by_Olly_Larkin/main.cpp -o src/main.o
+src/MIPS_Parser_by_Olly_Larkin/main.cpp: In function ‘std::__cxx11::string formatName(std::__cxx11::string)’:
+src/MIPS_Parser_by_Olly_Larkin/main.cpp:66:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (str[i] == '/' && slashIndex == -1)
+                                   ^
+g++ -W -Wall -std=c++11 -c src/MIPS_Parser_by_Olly_Larkin/parser.cpp -o src/parser.o
+src/MIPS_Parser_by_Olly_Larkin/parser.cpp: In function ‘void binGen(std::ofstream&, std::vector<std::vector<std::__cxx11::basic_string<char> > >&)’:
+src/MIPS_Parser_by_Olly_Larkin/parser.cpp:156:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < commVector.size(); ++i) {
+                      ^
+g++ -W -Wall -std=c++11 -c src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp -o src/instructionList.o
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp: In function ‘std::__cxx11::string giveStr(std::vector<std::__cxx11::basic_string<char> >)’:
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp:82:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < strVec.size(); ++i) {
+                      ^
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp: In function ‘bool regCheck(std::vector<std::__cxx11::basic_string<char> >&, const std::vector<int>&)’:
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp:89:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < index.size(); ++i) {
+                      ^
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp: In function ‘uint32_t R_TYPE(std::vector<std::__cxx11::basic_string<char> >&, const std::vector<OP_TYPE>&, int, int)’:
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp:107:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < opcodes.size(); ++i) {
+                      ^
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp:113:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < opcodes.size(); ++i) {
+                      ^
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp: In function ‘uint32_t I_TYPE(std::vector<std::__cxx11::basic_string<char> >&, const std::vector<OP_TYPE>&, int, int, bool)’:
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp:141:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < opcodes.size(); ++i) {
+                      ^
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp:147:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < opcodes.size(); ++i) {
+                      ^
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp: In function ‘bool regMemSeperator(std::__cxx11::string, int&, int&)’:
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp:186:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = index+1; i < str.size(); ++i)
+                            ^
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp: At global scope:
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp:479:40: warning: unused parameter ‘argVec’ [-Wunused-parameter]
+ uint32_t nop(std::vector<std::string>& argVec, int i) {
+                                        ^
+src/MIPS_Parser_by_Olly_Larkin/instructionList.cpp:479:52: warning: unused parameter ‘i’ [-Wunused-parameter]
+ uint32_t nop(std::vector<std::string>& argVec, int i) {
+                                                    ^
+mkdir -p bin
+cp testbench/mips_testbench bin/
+chmod +x bin/mips_testbench
+g++ -W -Wall -std=c++11 src/main.o src/parser.o src/instructionList.o -o bin/mips_parser
+make[1]: Leaving directory '/media/sf_shared/cw/summative/working/respectingPolice'

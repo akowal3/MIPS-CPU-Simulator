@@ -1,0 +1,244 @@
+ADD_1 , add , Pass , sk3017 , 5 + (-3)
+ADD_2 , add , Fail , sk3017 , (-13) + (-3) ex:240 act:0
+ADD_3 , add , Fail , sk3017 , overflow ex:246 act:0
+ADDI_1 , addi , Pass , sk3017 , 5 + 5
+ADDI_2 , addi , Fail , sk3017 , 5 + (-10) ex:251 act:0
+ADDI_3 , addi , Fail , sk3017 , sign extension ex:1 act:0
+ADDI_4 , addi , Fail , sk3017 , overflow ex:246 act:0
+ADDIU_1 , addiu , Pass , sk3017 , 5 + 5
+ADDIU_2 , addiu , Fail , sk3017 , 5 + (-10) ex:251 act:0
+ADDIU_3 , addiu , Fail , sk3017 , sign extension ex:1 act:0
+ADDIU_4 , addiu , Pass , sk3017 , no overflow
+ADDU_1 , addu , Pass , sk3017 , 5 + (-3)
+ADDU_2 , addu , Fail , sk3017 , (-13) + (-3) ex:240 act:0
+ADDU_3 , addu , Fail , sk3017 , no overflow ex:252 act:0
+AND_1 , and , Pass , sk3017 , 1010 & 1000
+ANDI_1 , andi , Pass , sk3017 , 1010 & 1000
+ANDI_2 , andi , Pass , sk3017 , zero extension
+BEQ_1 , beq , Pass , sk3017 , 2 == 2 (branch taken)
+BEQ_2 , beq , Pass , sk3017 , 3 != 2 (branch not taken)
+BEQ_3 , beq , Fail , sk3017 , delayed branch (bt) ex:17 act:8
+BEQ_4 , beq , Pass , sk3017 , branch backward (bt)
+BGEZ_1 , bgez , Pass , sk3017 , 0 >= 0 (branch taken)
+BGEZ_2 , bgez , Pass , sk3017 , -10 >= 0 (branch not taken)
+BGEZ_3 , bgez , Fail , sk3017 , delayed branch ex:20 act:249
+BGEZ_4 , bgez , Fail , sk3017 , branch backward (bt) ex:10 act:249
+BGEZAL_1 , bgezal , Pass , sk3017 , 10 >= 0 (branch taken)
+BGEZAL_2 , bgezal , Pass , sk3017 , -10 >= 0 (branch not taken)
+BGEZAL_3 , bgezal , Fail , sk3017 , delayed branch ex:22 act:7
+BGEZAL_4 , bgezal , Fail , sk3017 , branch backward (bt) ex:13 act:3
+BGEZAL_5 , bgezal , Fail , sk3017 , link register working (bt) ex:13 act:3
+BGEZAL_6 , bgezal , Fail , sk3017 , link register content (bt) ex:12 act:3
+BGEZAL_7 , bgezal , Pass , sk3017 , link register content (bnt)
+BGTZ_1 , bgtz , Pass , sk3017 , 10 > 0 (branch taken)
+BGTZ_2 , bgtz , Pass , sk3017 , 0 > 0 (branch not taken)
+BGTZ_3 , bgtz , Fail , sk3017 , delayed branch ex:20 act:249
+BGTZ_4 , bgtz , Fail , sk3017 , branch backward (bt) ex:5 act:249
+BLEZ_1 , blez , Pass , sk3017 , 10 <= 0 (branch not taken)
+BLEZ_2 , blez , Fail , sk3017 , 0 <= 0 (branch taken) ex:100 act:156
+BLEZ_3 , blez , Fail , sk3017 , delayed branch ex:22 act:245
+BLEZ_4 , blez , Fail , sk3017 , branch backward (bt) ex:5 act:4
+BLTZ_1 , bltz , Pass , sk3017 , 0 < 0 (branch not taken)
+BLTZ_2 , bltz , Fail , sk3017 , -10 < 0 (branch taken) ex:11 act:3
+BLTZ_3 , bltz , Fail , sk3017 , delayed branch ex:20 act:249
+BLTZ_4 , bltz , Fail , sk3017 , branch backward (bt) ex:10 act:4
+BLTZAL_1 , bltzal , Pass , sk3017 , 0 < 0 (branch not taken)
+BLTZAL_2 , bltzal , Fail , sk3017 , -10 < 0 (branch taken) ex:11 act:3
+BLTZAL_3 , bltzal , Fail , sk3017 , delayed branch ex:20 act:249
+BLTZAL_4 , bltzal , Fail , sk3017 , branch backward (bt) ex:10 act:4
+BLTZAL_5 , bltzal , Fail , sk3017 , link register working (bt) ex:13 act:3
+BLTZAL_6 , bltzal , Fail , sk3017 , link register content (bt) ex:12 act:3
+BLTZAL_7 , bltzal , Pass , sk3017 , link register content (bnt)
+BNE_1 , bne , Pass , sk3017 , 2 == 2 (branch not taken)
+BNE_2 , bne , Fail , sk3017 , 3 != 2 (branch taken) ex:5 act:7
+BNE_3 , bne , Fail , sk3017 , delayed branch (bt) ex:17 act:3
+BNE_4 , bne , Fail , sk3017 , branch backward (bt) ex:7 act:1
+DIV_1 , div , Pass , sk3017 , q (101 / 7) = 14
+DIV_2 , div , Fail , sk3017 , r (101 / 7) = 3 ex:3 act:0
+DIV_3 , div , Fail , sk3017 , q (101 / -7) = -14 or -15 ex:50 act:0
+DIV_4 , div , Fail , sk3017 , r (101 / -7) = 3 or -4 ex:50 act:0
+DIV_5 , div , Fail , sk3017 , q (-101 / 7) = -14 or -15 ex:50 act:0
+DIV_6 , div , Fail , sk3017 , r (-101 / 7) = -3 or 4 ex:50 act:0
+DIV_7 , div , Fail , sk3017 , -101 = q * (7) + r ex:50 act:0
+DIV_8 , div , Fail , sk3017 ,  101 = q * (-7) + r ex:50 act:0
+DIV_9 , div , Fail , sk3017 , -101 = q * (-7) + r ex:50 act:0
+DIV_10 , div , Fail , sk3017 , 101 = q * (7) + r ex:50 act:0
+DIV_11 , div , Pass , sk3017 , no error when division by 0
+DIV_12 , div , Fail , ak9717 , 101/7 ex:15 act:251
+DIVU_1 , divu , Pass , sk3017 , q (101 / 7) = 14
+DIVU_2 , divu , Fail , sk3017 , r (101 / 7) = 3 ex:3 act:0
+DIVU_3 , divu , Pass , sk3017 , q (101 / -7) = 0
+DIVU_4 , divu , Fail , sk3017 , r (101 / -7) = 101 ex:50 act:0
+DIVU_5 , divu , Fail , sk3017 , q (-101 / 7) = 0x24924916 ex:50 act:3
+DIVU_6 , divu , Fail , sk3017 , r (-101 / 7) = 1 ex:50 act:0
+DIVU_7 , divu , Fail , sk3017 , -101 = q * (7) + r ex:50 act:0
+DIVU_8 , divu , Fail , sk3017 , 101 = q * (7) + r ex:50 act:0
+DIVU_9 , divu , Pass , sk3017 , no error when division by 0
+FIB , stack , Pass , ak9717 , fibonacci(12) recursive formula
+J_1 , j , Pass , sk3017 , jump to 12
+J_2 , j , Fail , sk3017 , jump back to 8 ex:3 act:7
+J_3 , j , Pass , sk3017 , delayed branch
+JAL_1 , jal , Pass , sk3017 , jump to 12
+JAL_2 , jal , Fail , sk3017 , jump back to 8 ex:3 act:7
+JAL_3 , jal , Fail , sk3017 , link register working (bt) ex:13 act:3
+JAL_4 , jal , Fail , sk3017 , link register content ex:8 act:3
+JAL_5 , jal , Fail , sk3017 , link register content ex:1 act:3
+JAL_6 , jal , Fail , sk3017 , delayed jump ex:10 act:3
+JALR_1 , jalr , Pass , sk3017 , jump to 68
+JALR_2 , jalr , Fail , sk3017 , jump back to 8 ex:3 act:7
+JALR_3 , jalr , Fail , sk3017 , link register working (bt) ex:13 act:3
+JALR_4 , jalr , Fail , sk3017 , link register content ex:16 act:3
+JALR_5 , jalr , Fail , sk3017 , link register content ex:1 act:3
+JALR_6 , jalr , Fail , sk3017 , delayed jump ex:10 act:3
+JR_1 , jr , Pass , sk3017 , jr $0
+JR_2 , jr , Fail , sk3017 , forward jump ex:1 act:245
+JR_3 , jr , Fail , sk3017 , delayed jump ex:1 act:245
+JR_4 , jr , Pass , sk3017 , jump to illegal memory (data memory)
+JR_5 , jr , Pass , sk3017 , jump to last inst mem
+LB_1 , lb , Fail , sk3017 , loading 4 bytes from word ex:5 act:245
+LB_2 , lb , Fail , sk3017 , sign extension of bytes ex:5 act:0
+LB_3 , lb , Fail , sk3017 , loading 4 bytes from word w. negative offset ex:5 act:0
+LB_4 , lb , Pass , sk3017 , validating 0 initialised memory
+LB_5 , lb , Pass , sk3017 , reading from illegal address: 0x24000000
+LB_6 , lb , Fail , sk3017 , reading address: 0x10000000 ex:197 act:0
+LBU_1 , lbu , Pass , sk3017 , loading 4 bytes from word
+LBU_2 , lbu , Fail , sk3017 , zero extension of bytes ex:5 act:0
+LBU_3 , lbu , Fail , sk3017 , loading 4 bytes from word w. negative offset ex:5 act:0
+LBU_4 , lbu , Pass , sk3017 , validating 0 initialised memory
+LBU_5 , lbu , Pass , sk3017 , reading from illegal address: 0x24000000
+LBU_6 , lbu , Fail , sk3017 , reading from address: 0x10000000 ex:146 act:0
+LH_1 , lh , Pass , sk3017 , loading 2 half words from word
+LH_2 , lh , Fail , sk3017 , sign extension of half words ex:5 act:0
+LH_3 , lh , Fail , sk3017 , loading 2 half words w. negative offset ex:5 act:0
+LH_4 , lh , Pass , sk3017 , reading from illegal address: 0x24000000
+LH_5 , lh , Fail , sk3017 , reading address: 0x10000000 ex:248 act:0
+LH_6 , lh , Pass , sk3017 , reading unaligned address
+LHU_1 , lhu , Pass , sk3017 , loading 2 half words from word
+LHU_2 , lhu , Fail , sk3017 , sign extension of half words ex:5 act:0
+LHU_3 , lhu , Fail , sk3017 , loading 2 half words w. negative offset ex:5 act:0
+LHU_4 , lhu , Pass , sk3017 , reading from illegal address: 0x24000000
+LHU_5 , lhu , Fail , sk3017 , reading from address: 0x10000000 ex:69 act:0
+LHU_6 , lhu , Pass , sk3017 , reading unaligned address
+LUI_1 , lui , Pass , sk3017 , loading a const
+LUI_2 , lui , Pass , sk3017 , lower 16 bits == 0
+LW_1 , lw , Fail , sk3107 , loading word from memory ex:5 act:245
+LW_2 , lw , Fail , sk3107 , loading word with negative offset ex:5 act:0
+LW_3 , lw , Pass , sk3017 , reading from illegal address: 0x24000000
+LW_4 , lw , Fail , sk3017 , test reading from 0x10000000 ex:3 act:0
+LW_5 , lw , Pass , sk3017 , reading unaligned address
+LWL_1 , lwl , Pass , sk3017 , load with 0 offset
+LWL_2 , lwl , Fail , sk3017 , load with 1 offset ex:52 act:0
+LWL_3 , lwl , Fail , sk3017 , load with 2 offset ex:64 act:0
+LWL_4 , lwl , Fail , sk3017 , load with 3 offset ex:68 act:0
+LWL_5 , lwl , Pass , sk3017 , preserving bits 1 offset
+LWL_6 , lwl , Pass , sk3017 , preserving bits 2 offset
+LWL_7 , lwl , Pass , sk3017 , preserving bits 3 offset
+LWL_8 , lwl , Fail , sk3017 , load with negative offset ex:68 act:0
+LWL_9 , lwl , Fail , ak9717 , LWL 4 numbers ex:239 act:74
+LWR_1 , lwr , Pass , sk3017 , load with 0 offset
+LWR_2 , lwr , Fail , sk3017 , load with 1 offset ex:34 act:0
+LWR_3 , lwr , Fail , sk3017 , load with 2 offset ex:51 act:0
+LWR_4 , lwr , Fail , sk3017 , load with 3 offset ex:68 act:0
+LWR_5 , lwr , Pass , sk3017 , preserving bits 0 offset
+LWR_6 , lwr , Pass , sk3017 , preserving bits 1 offset
+LWR_7 , lwr , Pass , sk3017 , preserving bits 2 offset
+LWR_8 , lwr , Fail , sk3017 , load with negative offset ex:51 act:0
+MFHI_1 , mfhi , Pass , sk3107 , moving from hi after multu
+MFHI_2 , mfhi , Pass , sk3107 , no exeptions
+MFHI_3 , mfhi , Pass , sk3107 , no exeptions
+MFLO_1 , mflo , Pass , sk3107 , moving from lo after multu
+MFLO_2 , mflo , Pass , sk3107 , no exeptions
+MFLO_3 , mflo , Pass , sk3107 , no exeptions
+MTHI_1 , mthi , Pass , sk3107 , moving to hi
+MTHI_2 , mthi , Pass , sk3107 , no exepctions
+MTLO_1 , mtlo , Pass , sk3107 , moving to lo
+MTLO_2 , mthi , Pass , sk3107 , no exepctions
+MULT_1 , mult , Pass , sk3107 , checking lo
+MULT_2 , mult , Fail , sk3107 , checking hi ex:17 act:0
+MULT_3 , mult , Fail , sk3107 , checking sign ex:19 act:0
+MULT_4 , mult , Pass , sk3107 , no exeptions
+MULTU_1 , multu , Pass , sk3107 , checking lo
+MULTU_2 , multu , Fail , sk3107 , checking hi ex:17 act:0
+MULTU_3 , multu , Fail , sk3107 , 0 extension ex:13 act:1
+MULTU_4 , multu , Pass , sk3107 , no exeptions
+OR_1 , or , Pass , ak9717 , 1100 | 0001
+OR_2 , or , Fail , ak9717 , 1100 | 1001 ex:13 act:9
+ORI_1 , ori , Pass , sk3017 , 1100 | 0001
+ORI_2 , ori , Fail , sk3107 , ori 0 extension ex:3 act:69
+SB_1 , sb , Pass , sk3017 , storing 4 bytes and reading word
+SB_2 , sb , Fail , sk3017 , storing 4 bytes into word w. negative offset ex:5 act:3
+SB_3 , sb , Fail , sk3017 , storing to legal memory ex:7 act:3
+SB_4 , sb , Fail , sk3017 , storing to illegal memory: 0x24000000 ex:245 act:7
+SB_5 , sb , Fail , sk3017 , storing to illegal memory: 0x10000000 ex:245 act:7
+SH_1 , sh , Pass , sk3017 , storing 2 half_word and reading word
+SH_2 , sh , Fail , sk3017 , storing 2 half_words into word w. negative offset ex:5 act:3
+SH_3 , sh , Fail , sk3017 , storing to legal memory ex:11 act:3
+SH_4 , sh , Fail , sk3017 , storing to illegal memory: 0x24000000 ex:245 act:7
+SH_5 , sh , Fail , sk3017 , storing to illegal memory: 0x10000000 ex:245 act:7
+SH_6 , sh , Fail , sk3017 , storing to unaligned memory ex:245 act:7
+SLL_1 , sll , Pass , sk3017 , shifting by 1
+SLL_2 , sll , Fail , sk3017 , shifting by 31 ex:18 act:5
+SLLV_1 , sllv , Pass , sk3017 , shifting by 1
+SLLV_2 , sllv , Fail , sk3017 , shifting by 31 ex:0 act:10
+SLLV_3 , sllv , Fail , sk3017 , register with non zero bits [31:5] ex:64 act:0
+SLT_1 , slt , Pass , ak9717 , -1 < 1
+SLT_2 , slt , Pass , sk3017 , a < a
+SLT_3 , slt , Fail , sk3017 , -2 < -1 ex:13 act:11
+SLT_4 , slt , Pass , sk3017 , no exceptions
+SLTI_1 , slti , Pass , sk3107 , -1 < 1
+SLTI_2 , slti , Pass , sk3017 , a < a
+SLTI_3 , slti , Fail , sk3017 , -2 < -1 ex:13 act:11
+SLTI_4 , slti , Pass , sk3017 , no exceptions
+SLTIU_1 , sltiu , Pass , sk3107 , -1 < 1
+SLTIU_2 , sltiu , Pass , sk3017 , a < a
+SLTIU_3 , sltiu , Fail , sk3017 , -2 < -1 ex:13 act:11
+SLTIU_4 , sltiu , Pass , sk3017 , no exceptions
+SLTU_1 , sltu , Pass , sk3017 , -1 < 1
+SLTU_2 , sltu , Pass , sk3017 , a < a
+SLTU_3 , sltu , Fail , sk3017 , -2 < -1 ex:13 act:11
+SLTU_4 , sltu , Pass , sk3017 , no exceptions
+SRA_1 , sra , Pass , sk3017 , shifting by 1
+SRA_2 , sra , Fail , sk3017 , shifting by 31 ex:17 act:23
+SRL_1 , srl , Pass , sk3017 , shifting by 1
+SRL_2 , srl , Pass , sk3017 , shifting by 31
+SRLV_1 , srlv , Pass , sk3017 , shifting by 1
+SRLV_2 , srlv , Fail , sk3017 , shifting by 31 ex:1 act:10
+SRLV_3 , srlv , Fail , sk3017 , register with non zero bits [31:5] ex:35 act:0
+SUB_1 , sub , Pass , sk3017 , 10 - (-11)
+SUB_2 , sub , Fail , sk3017 , result 0x80000000 ex:35 act:4
+SUB_3 , sub , Pass , sk3017 , positive overflow
+SUB_4 , sub , Pass , sk3017 , negative overflow
+SUBU_1 , subu , Pass , sk3017 , 10 - (-11)
+SUBU_2 , subu , Fail , sk3017 , result 0x80000000 ex:35 act:4
+SUBU_3 , subu , Pass , sk3017 , no positive overflow
+SUBU_4 , subu , Pass , sk3017 , no negative overflow
+SW_1 , sw , Pass , sk3017 , storing 2 half_word and reading word
+SW_2 , sw , Fail , sk3017 , storing word w. negative offset ex:5 act:3
+SW_3 , sw , Fail , sk3017 , storing to legal memory ex:11 act:3
+SW_4 , sw , Fail , sk3017 , storing to illegal memory: 0x24000000 ex:245 act:7
+SW_5 , sw , Fail , sk3017 , storing to illegal memory: 0x10000000 ex:245 act:7
+SW_6 , sw , Fail , sk3017 , storing to unaligned memory ex:245 act:7
+XOR_1 , xor , Pass , sk3017 , 0b1100 xor 0b0101
+XOR_2 , xor , Fail , sk3017 , a xor b xor b ex:29 act:22
+XORI_1 , xori , Pass , sk3017 , 0b1100 xor 0b0101
+XORI_2 , xori , Fail , sk3017 , a xor b xor b ex:31 act:11
+XORI_3 , xori , Fail , sk3017 , 0 extension ex:73 act:11
+GETC_01 , lw , Pass , ak9717 , lw ASCII char
+GETC_02 , lb , Fail , ak9717 , lb 0x30000000
+GETC_03 , lb , Fail , ak9717 , lb 0x30000001
+GETC_04 , lb , Fail , ak9717 , lb 0x30000002
+GETC_05 , lb , Fail , ak9717 , lb 0x30000003
+GETC_06 , lw , Pass , ak9717 , lw iso8859-1 char
+GETC_07 , lbu , Pass , ak9717 , lbu EOF
+GETC_08 , lw , Pass , ak9717 , lw EOF
+GETC_09 , lhu , Fail , ak9717 , lhu EOF
+GETC_10 , lb , Pass , ak9717 , lb EOF
+GETC_11 , lh , Fail , ak9717 , lh EOF
+PUTC_01 , sw , Pass , ak9717 , sw ASCII char
+PUTC_02 , sw , Fail , ak9717 , sw iso8859-1 char
+PUTC_03 , sb , Fail , ak9717 , sb 0x30000004
+PUTC_04 , sb , Fail , ak9717 , sb 0x30000005
+PUTC_05 , sb , Fail , ak9717 , sb 0x30000006
+PUTC_06 , sb , Fail , ak9717 , sb 0x30000007
+PUTC_07 , sh , Fail , ak9717 , sh 0x30000004
+PUTC_08 , sh , Fail , ak9717 , sh 0x30000006

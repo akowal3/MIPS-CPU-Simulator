@@ -1,0 +1,63 @@
+make[1]: Entering directory '/media/sf_shared/cw/summative/working/respectingPolice'
+g++ -W -Wall -std=c++11  src/MIPS_Simulator/registers.cpp -c -o src/registers.o
+g++ -W -Wall -std=c++11  src/MIPS_Simulator/instruction.cpp -c -o src/instruction.o
+g++ -W -Wall -std=c++11 src/MIPS_Simulator/memory.cpp -c -o src/memory.o
+src/MIPS_Simulator/memory.cpp: In member function ‘void memory::write_w(word, word)’:
+src/MIPS_Simulator/memory.cpp:57:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(index >= data->size())
+              ^
+src/MIPS_Simulator/memory.cpp: In member function ‘void memory::write_h(word, word)’:
+src/MIPS_Simulator/memory.cpp:75:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(index >= data->size())
+              ^
+src/MIPS_Simulator/memory.cpp: In member function ‘void memory::write_b(word, word)’:
+src/MIPS_Simulator/memory.cpp:102:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(index >= data->size()){
+              ^
+src/MIPS_Simulator/memory.cpp: In member function ‘word memory::read_w(word)’:
+src/MIPS_Simulator/memory.cpp:132:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(index >= data->size()) return 0;
+              ^
+src/MIPS_Simulator/memory.cpp:144:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     return (in_w == EOF) ? -1 : in_w & 0x000000FF;
+                  ^
+src/MIPS_Simulator/memory.cpp: In member function ‘word memory::read_h(word)’:
+src/MIPS_Simulator/memory.cpp:154:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(index >= data->size()) return 0;
+              ^
+src/MIPS_Simulator/memory.cpp:167:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+       return (in_w == EOF) ? 0xFFFF : in_w & 0x00FF;
+                    ^
+src/MIPS_Simulator/memory.cpp:169:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     return (in_w == EOF) ? 0xFFFF : 0;
+                  ^
+src/MIPS_Simulator/memory.cpp: In member function ‘word memory::read_b(word)’:
+src/MIPS_Simulator/memory.cpp:186:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(index >= data->size()) return 0;
+              ^
+src/MIPS_Simulator/memory.cpp:199:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+       return (in_w == EOF) ? 0xFF : in_w & 0xFF;
+                    ^
+src/MIPS_Simulator/memory.cpp:201:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     return (in_w == EOF) ? 0xFF : 0;
+                  ^
+src/MIPS_Simulator/memory.cpp: In member function ‘void memory::print_mem() const’:
+src/MIPS_Simulator/memory.cpp:227:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i = 0; i < inst->size(); i++)
+                    ^
+src/MIPS_Simulator/memory.cpp:231:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i = 0; i < data->size(); i++)
+                    ^
+src/MIPS_Simulator/memory.cpp: In member function ‘word memory::read_h(word)’:
+src/MIPS_Simulator/memory.cpp:180:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/MIPS_Simulator/memory.cpp: In member function ‘word memory::read_b(word)’:
+src/MIPS_Simulator/memory.cpp:214:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -W -Wall -std=c++11 src/MIPS_Simulator/cpu.cpp -c -o src/cpu.o
+g++ -W -Wall -std=c++11 src/MIPS_Simulator/simulator.cpp -c -o src/simulator.o
+mkdir -p bin
+g++ -W -Wall -std=c++11 src/registers.o src/instruction.o src/memory.o src/cpu.o src/simulator.o -o bin/mips_simulator
+make[1]: Leaving directory '/media/sf_shared/cw/summative/working/respectingPolice'
