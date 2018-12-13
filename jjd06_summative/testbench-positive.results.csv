@@ -93,7 +93,7 @@ JALR_6 , jalr , Pass , sk3017 , delayed jump
 JR_1 , jr , Pass , sk3017 , jr $0
 JR_2 , jr , Pass , sk3017 , forward jump
 JR_3 , jr , Pass , sk3017 , delayed jump
-JR_4 , jr , Fail , sk3017 , jump to illegal memory (data memory) ex:245 act:timeout
+JR_4 , jr , Pass , sk3017 , jump to illegal memory (data memory)
 JR_5 , jr , Pass , sk3017 , jump to last inst mem
 LB_1 , lb , Pass , sk3017 , loading 4 bytes from word
 LB_2 , lb , Pass , sk3017 , sign extension of bytes

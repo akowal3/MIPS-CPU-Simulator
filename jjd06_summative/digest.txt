@@ -4,7 +4,7 @@ Results
 -------
 
 simulator: 242 of 242 tests passed
-testbench-positive: 231 of 244 tests passed
+testbench-positive: 232 of 244 tests passed
 testbench-negative: 63 of 244 tests passed
 testbench-size: 244
 
